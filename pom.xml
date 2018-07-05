@@ -939,7 +939,7 @@
                         <autoVersionSubmodules>true</autoVersionSubmodules>
                         <preparationGoals>clean install</preparationGoals>
                         <goals>deploy</goals>
-			<arguments>-Papache-release,integration-tests -DaltDeploymentRepository=unomi-releases::default::https://devtools.jahia.com/nexus/content/repositories/unomi-releases/</arguments>
+			<arguments>-Pintegration-tests -DaltDeploymentRepository=unomi-releases::default::https://devtools.jahia.com/nexus/content/repositories/unomi-releases/</arguments>
                     </configuration>
                 </plugin>
                 <plugin>

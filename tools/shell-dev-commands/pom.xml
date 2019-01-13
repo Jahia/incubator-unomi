@@ -21,7 +21,7 @@
     <parent>
         <artifactId>unomi-tools</artifactId>
         <groupId>org.apache.unomi</groupId>
-        <version>1.4.0-incubating-SNAPSHOT</version>
+        <version>1.3.3-jahia</version>
     </parent>
 
     <artifactId>shell-dev-commands</artifactId>

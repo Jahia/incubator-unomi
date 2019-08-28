@@ -30,8 +30,8 @@ then
 fi
 pushd package/target
 echo Uncompressing Unomi package...
-tar zxvf unomi-$UNOMI_VERSION.tar.gz
-cd unomi-$UNOMI_VERSION/bin
+tar zxvf jcustomer-$UNOMI_VERSION.tar.gz
+cd jcustomer-$UNOMI_VERSION/bin
 echo Apache Unomi features installed, use [unomi:start] to start it.
 ./karaf debug
 popd

@@ -35,7 +35,7 @@
         </dependency>
         <dependency>
             <groupId>org.apache.unomi</groupId>
-            <artifactId>unomi</artifactId>
+            <artifactId>jcustomer</artifactId>
             <version>${project.version}</version>
             <type>tar.gz</type>
             <scope>test</scope>

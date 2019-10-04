@@ -1052,7 +1052,7 @@
                         <autoVersionSubmodules>true</autoVersionSubmodules>
                         <preparationGoals>clean install</preparationGoals>
                         <goals>deploy</goals>
-                        <arguments>-Papache-release,integration-tests</arguments>
+                        <arguments>${release.arguments} -Papache-release,integration-tests</arguments>
                     </configuration>
                 </plugin>
                 <plugin>
@@ -1225,13 +1225,6 @@
                     <scmCommentPrefix>[jgitflow-maven-plugin] </scmCommentPrefix>
                 </configuration>
             </plugin>
-            <plugin>
-              <groupId>org.apache.maven.plugins</groupId>
-              <artifactId>maven-release-plugin</artifactId>
-              <configuration>
-                <arguments>${release.arguments}</arguments>
-              </configuration>
-           </plugin>
         </plugins>
 
     </build>

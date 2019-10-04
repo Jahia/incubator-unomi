@@ -90,11 +90,11 @@
         <httpclient-osgi.version>4.5.5</httpclient-osgi.version>
         <httpcore-osgi.version>4.4.9</httpcore-osgi.version>
 
+        <release.arguments>-Papache-release,integration-tests</release.arguments>
+
         <!-- nexus staging repository settings -->
         <nexus.maven.plugin.version>1.5.1</nexus.maven.plugin.version>
         <unomi.nexus.staging.repository.id>1b70357fee4aafe</unomi.nexus.staging.repository.id>
-
-        <release.arguments></release.arguments>
 
     </properties>
 
@@ -1052,7 +1052,7 @@
                         <autoVersionSubmodules>true</autoVersionSubmodules>
                         <preparationGoals>clean install</preparationGoals>
                         <goals>deploy</goals>
-                        <arguments>${release.arguments} -Papache-release,integration-tests</arguments>
+                        <arguments>${release.arguments}</arguments>
                     </configuration>
                 </plugin>
                 <plugin>

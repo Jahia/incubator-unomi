@@ -94,6 +94,8 @@
         <nexus.maven.plugin.version>1.5.1</nexus.maven.plugin.version>
         <unomi.nexus.staging.repository.id>1b70357fee4aafe</unomi.nexus.staging.repository.id>
 
+        <release.arguments></release.arguments>
+
     </properties>
 
     <mailingLists>
@@ -1223,6 +1225,13 @@
                     <scmCommentPrefix>[jgitflow-maven-plugin] </scmCommentPrefix>
                 </configuration>
             </plugin>
+            <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-release-plugin</artifactId>
+              <configuration>
+                <arguments>${release.arguments}</arguments>
+              </configuration>
+           </plugin>
         </plugins>
 
     </build>

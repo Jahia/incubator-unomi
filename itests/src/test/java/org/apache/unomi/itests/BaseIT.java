@@ -50,7 +50,7 @@ public abstract class BaseIT {
 
         MavenArtifactUrlReference karafUrl = maven()
                 .groupId("org.apache.unomi")
-                .artifactId("unomi")
+                .artifactId("jcustomer")
                 .type("tar.gz")
                 .versionAsInProject();
 

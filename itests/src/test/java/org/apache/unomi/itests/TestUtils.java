@@ -19,12 +19,19 @@ package org.apache.unomi.itests;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.http.HttpResponse;
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.ContentType;
+import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.util.EntityUtils;
+import org.apache.unomi.api.ContextResponse;
 import org.apache.unomi.persistence.spi.CustomObjectMapper;
+import org.junit.Assert;
 
 import java.io.IOException;
 
 public class TestUtils {
+    private static final String JSON_MYME_TYPE = "application/json";
 
     public static <T> T retrieveResourceFromResponse(HttpResponse response, Class<T> clazz) throws IOException {
         if (response == null) {
@@ -44,4 +51,44 @@ public class TestUtils {
         }
         return null;
     }
+
+    public RequestResponse executeContextJSONRequest(HttpPost request, String sessionId) throws IOException {
+        try (CloseableHttpResponse response = HttpClientBuilder.create().build().execute(request)) {
+            // validate mimeType
+            String mimeType = ContentType.getOrDefault(response.getEntity()).getMimeType();
+            Assert.assertEquals("Response content type should be " + JSON_MYME_TYPE, JSON_MYME_TYPE, mimeType);
+
+            // validate context
+            ContextResponse context = TestUtils.retrieveResourceFromResponse(response, ContextResponse.class);
+            Assert.assertNotNull("Context should not be null", context);
+            Assert.assertNotNull("Context profileId should not be null", context.getProfileId());
+            Assert.assertEquals("Context sessionId should be the same as the sessionId used to request the context", sessionId,
+                    context.getSessionId());
+
+            String cookieHeader = null;
+            if (response.containsHeader("Set-Cookie")) {
+                cookieHeader = response.getHeaders("Set-Cookie")[0].toString().substring(12);
+            }
+            return new RequestResponse(context, cookieHeader);
+        }
+    }
+
+    public static class RequestResponse {
+        private ContextResponse contextResponse;
+        private String cookieHeaderValue;
+
+        public RequestResponse(ContextResponse contextResponse, String cookieHeaderValue) {
+            this.contextResponse = contextResponse;
+            this.cookieHeaderValue = cookieHeaderValue;
+        }
+
+        public ContextResponse getContextResponse() {
+            return contextResponse;
+        }
+
+        public String getCookieHeaderValue() {
+            return cookieHeaderValue;
+        }
+    }
+
 }

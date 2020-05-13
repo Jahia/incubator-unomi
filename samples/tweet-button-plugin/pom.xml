@@ -21,7 +21,7 @@
     <parent>
         <artifactId>samples</artifactId>
         <groupId>org.apache.unomi</groupId>
-        <version>1.4.2-jahia-SNAPSHOT</version>
+        <version>1.4.2-jahia</version>
     </parent>
 
     <artifactId>tweet-button-plugin</artifactId>

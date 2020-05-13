@@ -21,7 +21,7 @@
     <parent>
         <groupId>org.apache.unomi</groupId>
         <artifactId>unomi-extensions</artifactId>
-        <version>1.4.2-jahia-SNAPSHOT</version>
+        <version>1.4.2-jahia</version>
     </parent>
 
     <artifactId>unomi-mailchimp-connector</artifactId>

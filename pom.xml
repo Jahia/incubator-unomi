@@ -976,7 +976,7 @@
                         <autoVersionSubmodules>true</autoVersionSubmodules>
                         <preparationGoals>clean install</preparationGoals>
                         <goals>deploy</goals>
-                        <arguments>-Papache-release,integration-tests</arguments>
+                        <arguments>-Papache-release</arguments>
                     </configuration>
                 </plugin>
                 <plugin>

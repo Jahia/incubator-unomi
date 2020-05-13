@@ -312,15 +312,6 @@
     </repositories>
 
     <profiles>
-        <profile>
-            <id>integration-tests</id>
-            <activation>
-                <activeByDefault>false</activeByDefault>
-            </activation>
-            <modules>
-                <module>itests</module>
-            </modules>
-        </profile>
 
         <profile>
             <id>ci-build-itests</id>
@@ -329,9 +320,6 @@
                     <name>maven.repo.local</name>
                 </property>
             </activation>
-            <modules>
-                <module>itests</module>
-            </modules>
             <build>
                 <plugins>
                     <plugin>

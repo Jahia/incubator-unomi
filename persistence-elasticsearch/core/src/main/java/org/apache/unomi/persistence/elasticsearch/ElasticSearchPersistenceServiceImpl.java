@@ -979,7 +979,7 @@ public class ElasticSearchPersistenceServiceImpl implements PersistenceService, 
                                 "    \"index\" : {\n" +
                                 "        \"number_of_shards\" : " + monthlyIndexNumberOfShards + ",\n" +
                                 "        \"number_of_replicas\" : " + monthlyIndexNumberOfReplicas + ",\n" +
-                                "        \"mapping.total_fields.limit\" : " + monthlyIndexMappingTotalFieldsLimit + ",\n" +
+                                "        \"mapping.total_fields.limit\" : " + monthlyIndexMappingTotalFieldsLimit + "\n" +
                                 "    },\n" +
                                 "    \"analysis\": {\n" +
                                 "      \"analyzer\": {\n" +
@@ -1059,7 +1059,7 @@ public class ElasticSearchPersistenceServiceImpl implements PersistenceService, 
                         "    \"index\" : {\n" +
                         "        \"number_of_shards\" : " + numberOfShards + ",\n" +
                         "        \"number_of_replicas\" : " + numberOfReplicas + ",\n" +
-                        "        \"mapping.total_fields.limit\" : " + indexMappingTotalFieldsLimit + ",\n" +
+                        "        \"mapping.total_fields.limit\" : " + indexMappingTotalFieldsLimit + "\n" +
                         "    },\n" +
                         "    \"analysis\": {\n" +
                         "      \"analyzer\": {\n" +

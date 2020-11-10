@@ -35,7 +35,7 @@
         event tracking server.
     </description>
     <url>https://unomi.apache.org</url>
-    <version>1.4.3-jahia-SNAPSHOT</version>
+    <version>1.4.3-jahia</version>
     <packaging>pom</packaging>
 
     <licenses>
@@ -118,7 +118,7 @@
 <scm>
     <connection>scm:git:git@github.com:Jahia/jcustomer.git</connection>
     <developerConnection>scm:git:git@github.com:Jahia/jcustomer.git</developerConnection>
-    <tag>jcustomer-1.4.x</tag>
+    <tag>jcustomer-1.4.3-jahia</tag>
     <url>https://github.com/Jahia/jcustomer.git</url>
 </scm>
 

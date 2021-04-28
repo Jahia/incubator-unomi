@@ -21,7 +21,7 @@
     <parent>
         <artifactId>unomi-tools</artifactId>
         <groupId>org.apache.unomi</groupId>
-        <version>1.4.5-jahia</version>
+        <version>1.4.5-jahia-SNAPSHOT</version>
     </parent>
 
     <artifactId>shell-commands</artifactId>
